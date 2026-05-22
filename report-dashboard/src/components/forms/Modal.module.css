@@ -1,0 +1,120 @@
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000; padding: 20px;
+}
+
+.modal {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  width: 100%; max-width: 680px;
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+}
+
+.header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px 0;
+  position: sticky; top: 0; background: var(--bg2);
+  z-index: 1; padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
+
+.closeBtn {
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text2); width: 32px; height: 32px;
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; cursor: pointer; font-size: 16px;
+  transition: all .15s;
+}
+.closeBtn:hover { background: var(--bg4); color: var(--text); }
+
+.form { padding: 20px 24px 24px; display: flex; flex-direction: column; gap: 14px; }
+
+.row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+
+.field { display: flex; flex-direction: column; gap: 5px; }
+
+.field label {
+  font-size: 11px; font-weight: 600; color: var(--text2);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  display: flex; align-items: center; gap: 6px;
+}
+
+.auto {
+  font-size: 10px; font-weight: 400; color: var(--accent);
+  text-transform: none; letter-spacing: 0;
+  background: rgba(108,143,255,.1); padding: 1px 5px; border-radius: 4px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--bg3); border: 1px solid var(--border2);
+  color: var(--text); padding: 8px 11px; border-radius: 8px;
+  font-size: 13px; font-family: var(--font); outline: none;
+  transition: border-color .15s; width: 100%;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus { border-color: var(--accent); }
+.field input::placeholder,
+.field textarea::placeholder { color: var(--text3); }
+.field input:disabled { opacity: 0.5; cursor: not-allowed; }
+.field textarea { resize: vertical; min-height: 80px; }
+.field select { cursor: pointer; }
+
+.actions {
+  display: flex; justify-content: flex-end; gap: 10px;
+  padding-top: 8px; border-top: 1px solid var(--border);
+}
+
+.btnPrimary {
+  background: var(--accent2); color: #fff; border: none;
+  padding: 8px 20px; border-radius: 8px; font-size: 13px;
+  font-weight: 500; cursor: pointer; font-family: var(--font);
+  transition: background .15s;
+}
+.btnPrimary:hover    { background: #4d6aff; }
+.btnPrimary:disabled { opacity: .45; cursor: not-allowed; }
+
+.btnGhost {
+  background: transparent; color: var(--text2);
+  border: 1px solid var(--border2); padding: 8px 16px;
+  border-radius: 8px; font-size: 13px; font-weight: 500;
+  cursor: pointer; font-family: var(--font); transition: all .15s;
+}
+.btnGhost:hover { background: rgba(255,255,255,.05); color: var(--text); }
+
+.btnDanger {
+  background: rgba(248,113,113,.12); color: var(--red);
+  border: 1px solid rgba(248,113,113,.25); padding: 8px 16px;
+  border-radius: 8px; font-size: 13px; font-weight: 500;
+  cursor: pointer; font-family: var(--font); transition: all .15s;
+}
+.btnDanger:hover { background: rgba(248,113,113,.2); }
+
+.error {
+  background: rgba(248,113,113,.1); border: 1px solid rgba(248,113,113,.3);
+  color: var(--red); padding: 10px 14px; border-radius: 8px;
+  font-size: 13px; display: flex; align-items: center; gap: 8px;
+}
+
+.confirmOverlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,.7);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1100; padding: 20px;
+}
+.confirmBox {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 14px; padding: 28px; max-width: 380px;
+  width: 100%; text-align: center;
+}
+.confirmBox h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.confirmBox p  { font-size: 13px; color: var(--text2); margin-bottom: 20px; }
+.confirmActions { display: flex; gap: 10px; justify-content: center; }
